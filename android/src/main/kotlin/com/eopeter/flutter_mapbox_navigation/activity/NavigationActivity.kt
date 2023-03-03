@@ -81,7 +81,7 @@ import com.mapbox.navigation.ui.voice.model.SpeechValue
 import com.mapbox.navigation.ui.voice.model.SpeechVolume
 import eopeter.flutter_mapbox_navigation.R
 import eopeter.flutter_mapbox_navigation.databinding.NavigationActivityBinding
-import java.util.Locale
+import java.util.*
 
 class NavigationActivity : AppCompatActivity() {
 
@@ -235,14 +235,16 @@ class NavigationActivity : AppCompatActivity() {
         mapboxMap.loadStyleUri(
             styleUrl
         ) {
-            if(FlutterMapboxNavigationPlugin.allowsClickToSetDestination)
-            {
-                // add long click listener that search for a route to the clicked destination
-                binding.mapView.gestures.addOnMapLongClickListener { point ->
-                    findRoute(point)
-                    true
-                }
-            }
+            findRoute(points[1])
+
+//            if(FlutterMapboxNavigationPlugin.allowsClickToSetDestination)
+//            {
+//                // add long click listener that search for a route to the clicked destination
+//                binding.mapView.gestures.addOnMapLongClickListener { point ->
+//                    findRoute(point)
+//                    true
+//                }
+//            }
         }
 
         // initialize view interactions
