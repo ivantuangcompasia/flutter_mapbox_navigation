@@ -235,14 +235,15 @@ class NavigationActivity : AppCompatActivity() {
         mapboxMap.loadStyleUri(
             styleUrl
         ) {
-            if(FlutterMapboxNavigationPlugin.allowsClickToSetDestination)
-            {
-                // add long click listener that search for a route to the clicked destination
-                binding.mapView.gestures.addOnMapLongClickListener { point ->
-                    findRoute(point)
-                    true
-                }
-            }
+            findRoute(points[1])
+//            if(FlutterMapboxNavigationPlugin.allowsClickToSetDestination)
+//            {
+//                // add long click listener that search for a route to the clicked destination
+//                binding.mapView.gestures.addOnMapLongClickListener { point ->
+//                    findRoute(point)
+//                    true
+//                }
+//            }
         }
 
         // initialize view interactions
